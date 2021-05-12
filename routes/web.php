@@ -20,3 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/Onpe/users', OnpeUsersController::class);
+
+//Route::resource(['/Onpe/users' => OnpeUsersController::class ]);
+
+//Route::resource(['/Onpe/users' => OnpeUsersController::class], ['as' => 'Onpe']);
+
+//Route::resource('/Onpe/users', OnpeUsersController::class , ['as' => 'Onpe'] );
