@@ -28,3 +28,9 @@ Route::resource('/Onpe/users', OnpeUsersController::class);
 //Route::resource(['/Onpe/users' => OnpeUsersController::class], ['as' => 'Onpe']);
 
 //Route::resource('/Onpe/users', OnpeUsersController::class , ['as' => 'Onpe'] );
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

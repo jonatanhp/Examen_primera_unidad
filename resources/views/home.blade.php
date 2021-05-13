@@ -16,6 +16,9 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <div>
+                    <button class="btn-succes" ><a href="/Onpe/users">Ir a principal</a></button>
+                </div>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OnpeUsersController extends Controller
@@ -13,7 +13,8 @@ class OnpeUsersController extends Controller
      */
     public function index()
     {
-        return view('Onpe.users.index');
+        $users['users']=User::paginate(20);
+        return view('Onpe.users.index', $users);
     }
 
     /**
@@ -24,6 +25,8 @@ class OnpeUsersController extends Controller
     public function create()
     {
         //
+        $users['usuarios']=User::paginate(20);
+        return view('Onpe.users.create');
     }
 
     /**
