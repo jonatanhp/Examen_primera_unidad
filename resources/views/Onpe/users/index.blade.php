@@ -58,7 +58,9 @@
                         <td>{{ $user->updated_at}}</td>
                         <td><a href="{{ url('/Onpe/users/'.$user->id.'/edit') }}" class="btn btn-success">Actualizar</a></td>
                         <!--<td><button class="btn" ><a href="{{ url('/user/'.$user->id.'/edit') }}"></a>ff</button></td>-->
-                        <td><form method="post" action="{{url('/Onpe/users/'.$user->id)}}" style="display:inline" >
+                        <td>
+                                <form method="POST" action="{{ url('/Onpe/users/'.$user->id.'/edit')}}" >
+                            <form method="post" action="{{url('/Onpe/users/'.$user->id)}}" style="display:inline" >
                             {{ csrf_field() }}{{ method_field('DELETE') }}
                             <button class="btn btn-danger" type="submit" onclick="return confirm('Desea borrar?');">
                                 Eliminar</button></form> </td>

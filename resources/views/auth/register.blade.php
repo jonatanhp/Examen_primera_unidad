@@ -117,7 +117,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!--<div class="form-group row">
                             <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                             <div class="col-md-6">
@@ -129,6 +129,31 @@
                                     </span>
                                 @enderror
                             </div>
+                            
+
+
+                        </div>-->
+
+                        <div class="form-group row">
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexott') }}</label>
+
+                            <div class="col-md-6">
+                                
+                                <select id="sexo" name="sexo" class="form-control" value="{{old('sexo')}}" autofocus aria-label="Default select example">
+                                    <option selected>Indique sexo</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    
+                                  </select>
+                                @error('sexo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            
+
+
                         </div>
 
                         <div class="form-group row">
@@ -149,7 +174,7 @@
                             <label for="fechaNac" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de nacimiento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="fechaNac" type="text" class="form-control @error('fechaNac') is-invalid @enderror" name="fechaNac" value="{{ old('fechaNac') }}" required autocomplete="fechaNac" autofocus>
+                                <input id="fechaNac" type="date" class="form-control @error('fechaNac') is-invalid @enderror" name="fechaNac" value="{{ old('fechaNac') }}" required autocomplete="fechaNac" autofocus>
 
                                 @error('fechaNac')
                                     <span class="invalid-feedback" role="alert">

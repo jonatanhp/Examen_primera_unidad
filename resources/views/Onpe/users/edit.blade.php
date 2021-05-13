@@ -108,13 +108,19 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="form-group row">
                             <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="sexo" type="text" class="form-control @error('sexo') is-invalid @enderror" 
-                                name="sexo" value="{{ isset($user->sexo)?$user->sexo:old('sexo') }}" required autocomplete="sexo" autofocus>
-
+                                
+                                <select id="sexo" name="sexo" class="form-control" value="{{ isset($user->sexo)?$user->sexo:old('sexo') }}" autofocus aria-label="Default select example">
+                                    <option selected>Indique sexo</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    
+                                  </select>
                                 @error('sexo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -123,14 +129,22 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="form-group row">
-                            <label for="estCivil" class="col-md-4 col-form-label text-md-right">{{ __('Estado civil') }}</label>
+                            <label for="estCivil" class="col-md-4 col-form-label text-md-right">{{ __('Estado Civil') }}</label>
 
                             <div class="col-md-6">
-                                <input id="estCivil" type="text" class="form-control @error('estCivil') is-invalid @enderror" 
-                                name="estCivil" value="{{ isset($user->estCivil)?$user->estCivil:old('estCivil') }}" required autocomplete="estCivil" autofocus>
-
-                                @error('estCivil')
+                                
+                                <select id="estCivil" name="estCivil" class="form-control" value="{{ isset($user->estCivil)?$user->estCivil:old('estCivil') }}" autofocus aria-label="Default select example">
+                                    <option selected>Indique Estado Civil</option>
+                                    <option value="Soltero">Soltero</option>
+                                    <option value="Casado">Casado</option>
+                                    <option value="Viudo">Viudo</option>
+                                    <option value="Divorciado">Divorciado</option>
+                                    
+                                  </select>
+                                @error('sexo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -142,7 +156,7 @@
                             <label for="fechaNac" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de nacimiento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="fechaNac" type="text" class="form-control @error('fechaNac') is-invalid @enderror"
+                                <input id="fechaNac" type="date" class="form-control @error('fechaNac') is-invalid @enderror"
                                  name="fechaNac" value="{{ isset($user->fechaNac)?$user->fechaNac:old('fechaNac') }}" required autocomplete="fechaNac" autofocus>
 
                                 @error('fechaNac')
@@ -168,14 +182,22 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="form-group row">
                             <label for="ciudad_id" class="col-md-4 col-form-label text-md-right">{{ __('Ciudad') }}</label>
 
                             <div class="col-md-6">
-                                <input id="ciudad_id" type="text" class="form-control @error('ciudad_id') is-invalid @enderror"
-                                 name="ciudad_id" value="{{ isset($user->ciudad_id)?$user->ciudad_id:old('ciudad_id') }}" required autocomplete="ciudad_id" autofocus>
-
-                                @error('ciudad_id')
+                                
+                                <select id="ciudad_id" name="ciudad_id" class="form-control" value="{{ isset($user->ciudad_id)?$user->ciudad_id:old('ciudad_id') }}" autofocus aria-label="Default select example">
+                                    <option selected>Indique Ciudad</option>
+                                    <option value="1">Puno</option>
+                                    <option value="2">Juliaca</option>
+                                    <option value="3">YUnguyo</option>
+                                    
+                                    
+                                  </select>
+                                @error('sexo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
