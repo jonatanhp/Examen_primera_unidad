@@ -117,25 +117,10 @@
                             </div>
                         </div>
 
-                        <!--<div class="form-group row">
-                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="sexo" type="text" class="form-control @error('sexo') is-invalid @enderror" name="sexo" value="{{ old('sexo') }}" required autocomplete="sexo" autofocus>
-
-                                @error('sexo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            
-
-
-                        </div>-->
+                        
 
                         <div class="form-group row">
-                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexott') }}</label>
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Sexo') }}</label>
 
                             <div class="col-md-6">
                                 
@@ -157,11 +142,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="estCivil" class="col-md-4 col-form-label text-md-right">{{ __('Estado civil') }}</label>
+                            <label for="estCivil" class="col-md-4 col-form-label text-md-right">{{ __('Estado Civil') }}</label>
 
                             <div class="col-md-6">
-                                <input id="estCivil" type="text" class="form-control @error('estCivil') is-invalid @enderror" name="estCivil" value="{{ old('estCivil') }}" required autocomplete="estCivil" autofocus>
-
+                                
+                                <select id="estCivil" name="estCivil" class="form-control" value="{{old('estCivil')}}" autofocus aria-label="Default select example">
+                                    <option selected>Indique Estado Civil</option>
+                                    <option value="Soltero">Soltero</option>
+                                    <option value="Casado">Casado</option>
+                                    <option value="Viudo">Viudo</option>
+                                    <option value="Divorciado">Divorciado</option>
+                                    
+                                  </select>
                                 @error('estCivil')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -202,9 +194,16 @@
                             <label for="ciudad_id" class="col-md-4 col-form-label text-md-right">{{ __('Ciudad') }}</label>
 
                             <div class="col-md-6">
-                                <input id="ciudad_id" type="text" class="form-control @error('ciudad_id') is-invalid @enderror" name="ciudad_id" value="{{ old('ciudad_id') }}" required autocomplete="ciudad_id" autofocus>
-
-                                @error('ciudad_id')
+                                
+                                <select id="ciudad_id" name="ciudad_id" class="form-control" value="{{ old('ciudad') }}" autofocus aria-label="Default select example">
+                                    <option selected>Indique Ciudad</option>
+                                    <option value="1">Puno</option>
+                                    <option value="2">Juliaca</option>
+                                    <option value="3">YUnguyo</option>
+                                    
+                                    
+                                  </select>
+                                @error('sexo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
