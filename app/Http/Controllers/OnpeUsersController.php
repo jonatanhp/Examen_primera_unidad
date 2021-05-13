@@ -38,6 +38,10 @@ class OnpeUsersController extends Controller
     public function store(Request $request)
     {
         //
+        $user=request()->all();        
+        $user=request()->except('_token');        
+        User::create($user);
+        return redirect("/Onpe/users");
     }
 
     /**
@@ -49,6 +53,8 @@ class OnpeUsersController extends Controller
     public function show($id)
     {
         //
+        $users=User::findOrFail($id);
+        return view ('Onpe.users.index', compact("users"));
     }
 
     /**
@@ -60,6 +66,9 @@ class OnpeUsersController extends Controller
     public function edit($id)
     {
         //
+        $user=User::findOrFail($id);
+        
+        return view("Onpe.users.edit", compact("user"));
     }
 
     /**
@@ -72,6 +81,10 @@ class OnpeUsersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user=User::findOrFail($id);
+        $user->update($request->all());
+        
+        return redirect("/Onpe/users");
     }
 
     /**
@@ -82,6 +95,8 @@ class OnpeUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::findOrFail($id);
+        $user->delete();
+        return redirect("/Onpe/users");
     }
 }
